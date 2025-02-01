@@ -13,7 +13,7 @@ function prepareAttachment({ issue, user }, text) {
 	let issueType = issue.fields.issuetype;
 	let res = {
 		author_name: user ? user.displayName : ''
-		, author_icon: user ? user.avatarUrls['24x24'] : ''
+		, author_icon: user && user.avatarUrls && user.avatarUrls['24x24'] ? user.avatarUrls['24x24'] : 'https://jira.example.com/secure/projectavatar?size=small&avatarId=10324'
 		, thumb_url: issueType.iconUrl
 		, ts: issue.fields.created
 	};
